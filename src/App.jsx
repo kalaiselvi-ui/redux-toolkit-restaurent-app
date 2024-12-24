@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar toggleCart={()=> setIsCartOpen((prev)=> !prev)}/>
         <Routes>
           <Route path="/" element={<Home  isCartOpen={isCartOpen}
@@ -28,7 +28,7 @@ function App() {
         <div>
           <ToastContainer position="top-center" autoClose={3000} />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
